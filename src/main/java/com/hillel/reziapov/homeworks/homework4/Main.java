@@ -7,6 +7,8 @@ public class Main {
         int c = 4;
         int volume = a * b * c;
         System.out.println("Об'єм паралелепіпеда = " + volume);
+        int lenght = (a + b + c) * 4;
+        System.out.println("Cумарна довжина всіх сторін = " + lenght);
 
     }
 }
