@@ -4,24 +4,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-/*
-ввести ім'я першої команди
-ввести кількість фрагів для 5-ти гравців першої команди (тобто має бути 5 змінних)
-ввести ім'я другої команди
-ввести кількість фрагів для 5-ти гравців другої команди (тобто має бути 5 змінних)
-підрахувати середнє арифметичне балів кожної команди
-порівняти результати команд та визначити переможця
-вивести у консоль:
-"Перемогла команда" + teamName + "набрала" + result + "очків"
- */
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("ВЕДІТЬ ІМ'Я ПЕРШОЇ КОМАНДИ");
         String nameFirstcommand = scanner.nextLine();
 
+        int gamer1Team1 = 0;
+        int gamer2Team1 = 0;
+        int gamer3Team1 = 0;
+        int gamer4Team1 = 0;
+        int gamer5Team1 = 0;
+
         System.out.println("Ведіть числове значення фрагів для першого гравця: ");
         if (scanner.hasNextInt()) {
-            int firstGamerfirstCommand = scanner.nextInt();
+            gamer1Team1 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -30,7 +26,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для другого гравця: ");
         if (scanner.hasNextInt()) {
-            int secondGamerfirstCommand = scanner.nextInt();
+            gamer2Team1 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -39,7 +35,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для третього гравця: ");
         if (scanner.hasNextInt()) {
-            int threeGamerfirstCommand = scanner.nextInt();
+            gamer3Team1 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -48,7 +44,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для четвертого гравця: ");
         if (scanner.hasNextInt()) {
-            int fourGamerfirstCommand = scanner.nextInt();
+            gamer4Team1 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -57,7 +53,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для п'ятого гравця: ");
         if (scanner.hasNextInt()) {
-            int fiveGamerfirstCommand = scanner.nextInt();
+            gamer5Team1 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -67,9 +63,15 @@ public class Main {
         System.out.println("ВЕДІТЬ ІМ'Я ДРУГОЇ КОМАНДИ");
         String nameSecondcommand = scanner.nextLine();
 
+        int gamer1Team2 = 0;
+        int gamer2Team2 = 0;
+        int gamer3Team2 = 0;
+        int gamer4Team2 = 0;
+        int gamer5Team2 = 0;
+
         System.out.println("Ведіть числове значення фрагів для першого гравця: ");
         if (scanner.hasNextInt()) {
-            int firstGamersecondCommand = scanner.nextInt();
+            gamer1Team2 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -78,7 +80,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для другого гравця: ");
         if (scanner.hasNextInt()) {
-            int secondGamersecondCommand = scanner.nextInt();
+            gamer2Team2 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -87,7 +89,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для третього гравця: ");
         if (scanner.hasNextInt()) {
-            int threeGamersecondCommand = scanner.nextInt();
+            gamer3Team2 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -96,7 +98,7 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для четвертого гравця: ");
         if (scanner.hasNextInt()) {
-            int fourGamersecondCommand = scanner.nextInt();
+            gamer4Team2 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
@@ -105,15 +107,25 @@ public class Main {
 
         System.out.println("Ведіть числове значення фрагів для п'ятого гравця: ");
         if (scanner.hasNextInt()) {
-            int fiveGamersecondCommand = scanner.nextInt();
+            gamer5Team2 = scanner.nextInt();
         } else {
             System.out.println("Невірний формат значення. Перезавантажте програму");
             System.exit(0);
         }
         scanner.nextLine();
 
-//int sum1 = firstGamerfirstCommand + secondGamerfirstCommand;
+        double sum1 = (gamer1Team1 + gamer2Team1 + gamer3Team1 + gamer4Team1 + gamer5Team1) / 5.0;
+        double sum2 = (gamer1Team2 + gamer2Team2 + gamer3Team2 + gamer4Team2 + gamer5Team2) / 5.0;
 
-        //System.out.println("Перемогла команда: " + sum1);
+        if (sum1 > sum2) {
+            System.out.println("Перемогла команда: " + nameFirstcommand + " набрала " + sum1 + " очків");
+        } else if (sum1 < sum2) {
+            System.out.println("Перемогла команда: " + nameSecondcommand + " набрала " + sum2 + " очків");
+        } else {
+            System.out.println("НІЧИЯ. ПЕРЕМОГЛА ДРУЖБА!");
+            System.out.println("Команда " + nameFirstcommand + " набрала " + sum1 + " очків");
+            System.out.println("Команда " + nameSecondcommand + " набрала " + sum2 + " очків");
+        }
+
     }
 }
