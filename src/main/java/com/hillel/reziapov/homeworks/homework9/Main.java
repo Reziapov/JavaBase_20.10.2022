@@ -13,7 +13,6 @@ public class Main {
 
             team1[i] = (int) (18 + (Math.random() * 23));
         }
-
         System.out.println("_ПЕРША КОМАНДА_");
         System.out.println(Arrays.toString(team1));
 
