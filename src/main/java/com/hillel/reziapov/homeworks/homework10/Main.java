@@ -26,8 +26,6 @@ public class Main {
 
             if (companyOrganizer[i] == gamer[i]) {
                 num++;
-            }
-            if (companyOrganizer[i] == gamer[i]) {
                 System.out.print(i + ", ");
             }
         }
@@ -36,7 +34,6 @@ public class Main {
         System.out.print("Кількість збігів: " + num);
 
     }
-
 }
 
 
