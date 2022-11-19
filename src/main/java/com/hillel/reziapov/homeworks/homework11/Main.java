@@ -14,10 +14,14 @@ public class Main {
         while (true) {
             if (scanner.hasNextInt()) {
                 scan = scanner.nextInt();
-                System.out.println("Ваше число: " + scan);
-                break;
+                if (scan > 1) {
+                    System.out.println("Ваше число: " + scan);
+                    break;
+                } else {
+                    System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. ВЕДІТЬ ПОЗИТИВНЕ ЧИСЛО > 1");
+                }
             } else {
-                System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. ВЕДІТЬ ЧИСЛО");
+                System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. ВЕДІТЬ ПОЗИТИВНО ЧИСЛО");
                 scanner.nextLine();
             }
         }
@@ -27,16 +31,21 @@ public class Main {
         while (true) {
             if (scanner.hasNextInt()) {
                 scan2 = scanner.nextInt();
-                System.out.println("Ваше число: " + scan2);
-                System.out.println("Створено масив: " + scan + " на " + scan2);
-                break;
+                if (scan2 == scan) {
+                    System.out.println("Ваше число: " + scan2);
+                    break;
+                } else {
+                    System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. РЯДКИ ТА СТОВПЦІ НЕ ОДНАКОВІ");
+                }
             } else {
                 System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. ВЕДІТЬ ЧИСЛО");
                 scanner.nextLine();
             }
         }
         scanner.nextLine();
+
         int[][] array = new int[scan][scan2];
+        System.out.println("Створено масив: " + scan + " на " + scan2);
 
         for (int i = 0; i < array.length; i++) {
 
