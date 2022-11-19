@@ -4,29 +4,26 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        Транспонуйте матрицю M x N. Розміри M та N задаються з консолі.
-//        Після введення повинні автоматично створюватися два масиви розміром M x N перший та N x M другий.
-
 
         Scanner scanner = new Scanner(System.in);
 
         int scan;
         int scan2;
 
-        System.out.println("Ведіть бажаний розмір рядків (М): ");
+        System.out.println("Ведіть розмір рядків (М): ");
         while (true) {
             if (scanner.hasNextInt()) {
                 scan = scanner.nextInt();
                 System.out.println("Ваше число: " + scan);
                 break;
-
             } else {
                 System.out.println("НЕВІРНЕ ЗНАЧЕННЯ. ВЕДІТЬ ЧИСЛО");
                 scanner.nextLine();
             }
         }
         scanner.nextLine();
-        System.out.println("Ведіть бажаний розмір стовпців (N): ");
+        System.out.println("Ведіть розмір стовпців (N). Число повинно бути однаковим з рядком");
+
         while (true) {
             if (scanner.hasNextInt()) {
                 scan2 = scanner.nextInt();
@@ -48,7 +45,6 @@ public class Main {
                 System.out.print(array[i][j] + "\t");
             }
             System.out.println();
-
         }
         System.out.println("Траснпонування матриці");
         for (int i = 0; i < array.length; i++) {
@@ -57,7 +53,6 @@ public class Main {
                 array[i][j] = array[j][i];
                 array[j][i] = array2;
             }
-
         }
         for (int i = 0; i < array.length; i++) {
 
@@ -65,8 +60,6 @@ public class Main {
                 System.out.print(array[i][j] + "\t");
             }
             System.out.println();
-
-
         }
     }
 }
