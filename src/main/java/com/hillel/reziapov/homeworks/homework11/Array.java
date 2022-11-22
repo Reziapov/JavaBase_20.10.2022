@@ -51,12 +51,13 @@ public class Array {
         sourceMatrixWithFiller(sourceMatrix);
         System.out.println("Транспонована матриця: " + scan2 + " на " + scan);
         transposedMatrix(sourceMatrix, transposedMatrix);
+
     }
     static int[][] sourceMatrixWithFiller(int[][] sourceMatrix) {
-        int numberFiller = 1;
+
         for (int i = 0; i < sourceMatrix.length; i++) {
             for (int j = 0; j < sourceMatrix[i].length; j++) {
-                sourceMatrix[i][j] = numberFiller++;
+                sourceMatrix[i][j] = (int) (Math.random() * 101);
                 System.out.print(sourceMatrix[i][j] + "\t");
             }
             System.out.println();
