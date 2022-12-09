@@ -35,4 +35,5 @@ public class Androids implements Smartphones, LinuxOS {
     public void printInfo() {
         System.out.println(getName() + " has:");
     }
-}
+    }
+
