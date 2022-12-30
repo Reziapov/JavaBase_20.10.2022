@@ -3,37 +3,38 @@ package com.hillel.reziapov.homeworks.homework18;
 
 public class Array {
 
-    public static void dimensionalMatrix() {
-
-        int matrix[][] = new int[5][5];
+    public static double arrayMean(int[] array) {
 
         double average;
-        double sum = 0;
-        int flag = 0;
+        int sum = 0;
 
-        average = (matrix.length * matrix[0].length);
+        if (array == null || array.length == 0) {
+            return 0;
+        }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = (int) (Math.random() * 11);
-                System.out.print(matrix[i][j] + "\t");
-                sum += matrix[i][j];
+        for (int j : array) {
+            sum += j;
+        }
+
+        average = sum / array.length;
+        return average;
+    }
+
+    public static boolean arraySquare(int[][] array) {
+        double check = 0;
+        if (array == null || array.length == 0) {
+            return false;
+        }
+
+        for (int[] ints : array) {
+            if (ints == null || ints.length == 0) {
+                return false;
             }
-            System.out.println();
-
+            check += ints.length;
         }
-        System.out.println("Середнє арифметичне масива: " + sum / average);
 
-        for (int k = 0; k < matrix.length; k++) {
+        check = check / (double) array.length;
+        return check == array.length;
 
-            if (matrix.length != matrix[k].length) {
-                System.out.println("Матриця не є квадратом");
-                flag = 1;
-                break;
-            }
-        }
-        if (flag == 0) {
-            System.out.println("Матриця квадратна");
-        }
     }
 }
